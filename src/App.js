@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import GameScoreboard from "./GameScoreboard";
 
 function App() {
+  const [gameData, setGameData] = useState({}); 
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    const { signal } = controller;
+
+    fetch("http://127.0.0.1:5000", { signal })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setGameData(data.scoreboard);
+      })
+      .catch((err) => {
+        if (err.name === "AbortError") {
+          console.log("Fetch aborted");
+        } else {
+          setError(err);
+        }
+      });
+
+    return () => {
+      controller.abort();
+    };
+  }, []);
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>My App</h1>
+      <GameScoreboard gameData={gameData} />
     </div>
   );
 }

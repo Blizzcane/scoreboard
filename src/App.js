@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import GameScoreboard from "./GameScoreboard";
+import "./App.css";
 
 function App() {
-  const [gameData, setGameData] = useState({}); 
+  const [gameData, setGameData] = useState({});
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -18,6 +20,7 @@ function App() {
       })
       .then((data) => {
         setGameData(data.scoreboard);
+        setIsLoading(false);
       })
       .catch((err) => {
         if (err.name === "AbortError") {
@@ -36,9 +39,19 @@ function App() {
     return <div>Error: {error.message}</div>;
   }
 
+  const date = gameData.gameDate ? new Date(gameData.gameDate) : null;
+
+  const formattedDate = date
+    ? date.toLocaleDateString("en-US", {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+      })
+    : "Dribbling...";
+
   return (
-    <div>
-      <h1>My App</h1>
+    <div className="app">
+      <h1 className="date">{formattedDate}</h1>
       <GameScoreboard gameData={gameData} />
     </div>
   );

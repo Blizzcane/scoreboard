@@ -11,12 +11,11 @@ function GameScoreboard({ gameData }) {
 
   // Define the scoreboard function here
   const scoreboard = ({ homeTeam, awayTeam }) => {
-    return `${homeTeam.teamName} ${homeTeam.score} - ${awayTeam.score} ${awayTeam.teamName}`;
+    return `${homeTeam.teamCity} ${homeTeam.teamName} ${homeTeam.score} - ${awayTeam.score} ${awayTeam.teamCity} ${awayTeam.teamName}`;
   };
   const formatDate = (dateString) => {};
   return (
-    <div className="scoreboard">
-      <h1>{gameData.gameDate}</h1>
+    <div className="scoreboard"> 
       {games.map((game) => (
         <div key={game.gameId} className="game">
           <h2>{scoreboard(game)}</h2>

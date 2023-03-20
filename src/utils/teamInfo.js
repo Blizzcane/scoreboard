@@ -1,4 +1,4 @@
-const nbaTeams = {
+export const nbaTeams = {
   "Atlanta Hawks": {
     logo: "https://cdn.nba.com/logos/nba/1610612737/global/L/logo.svg",
     primaryColor: "#E03A3E",
@@ -70,6 +70,12 @@ const nbaTeams = {
     primaryColor: "#002D62",
     secondaryColor: "#FDBB30",
     tertiaryColor: "#BEC0C2",
+  },
+  "Milwaukee Bucks": {
+    logo: "https://cdn.nba.com/logos/nba/1610612749/global/L/logo.svg",
+    primaryColor: "#00471B",
+    secondaryColor: "#F0EBD2",
+    tertiaryColor: "#0077C0",
   },
 
   "Los Angeles Clippers": {

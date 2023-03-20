@@ -5,13 +5,14 @@ import "./App.css";
 function App() {
   const [gameData, setGameData] = useState({});
   const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true); 
+  const scoreBoardUrl = process.env.REACT_APP_SCOREBOARD_URL;
 
   useEffect(() => {
     const controller = new AbortController();
     const { signal } = controller;
 
-    fetch("http://127.0.0.1:5000", { signal })
+    fetch(scoreBoardUrl+"/games", { signal })
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");

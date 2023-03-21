@@ -210,4 +210,10 @@ export const nbaTeams = {
     secondaryColor: "#e31837",
     thirdColor: "#c4ced3",
   },
+  "New York Knicks": {
+    logo: "https://cdn.nba.com/logos/nba/nyk.svg",
+    primaryColor: "#006bb6",
+    secondaryColor: "#f58426",
+    thirdColor: "#ffffff",
+  },
 };

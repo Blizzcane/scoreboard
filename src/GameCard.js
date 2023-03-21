@@ -3,11 +3,11 @@ import { nbaTeams } from "./utils/teamInfo";
 
 const GameCard = ({ game }) => {
   const scoreboard = ({ homeTeam, awayTeam }) => {
-    const homeTeamLogo = nbaTeams[`${homeTeam.teamCity} ${homeTeam.teamName}`]?.logo;
-    const awayTeamLogo = nbaTeams[`${awayTeam.teamCity} ${awayTeam.teamName}`]?.logo;
+    const homeTeamLogo = nbaTeams[`${homeTeam.teamCity} ${homeTeam.teamName}`].logo;
+    const awayTeamLogo = nbaTeams[`${awayTeam.teamCity} ${awayTeam.teamName}`].logo;
     const teamNames = `${homeTeam.teamCity} ${homeTeam.teamName} vs ${awayTeam.teamCity} ${awayTeam.teamName}`;
     const homeTeamScore = homeTeam.score;
-    const awayTeamScore = awayTeam.score; 
+    const awayTeamScore = awayTeam.score;  
 
     return (
       <div>

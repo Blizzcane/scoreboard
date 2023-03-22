@@ -1,52 +1,50 @@
-/* GameScoreboard styles */
 .scoreboard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  .game {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-shadow: 0px 0px 5px #ccc; 
-  }
-  
-  .team {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 5px;
-  }
-  
-  .team-name {
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  .team-score {
-    font-size: 18px;
-    font-weight: bold;
-  }
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
 
-  .team-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px; /* Adjust this to your image's size */
-    height: 50px; /* Adjust this to your image's size */
-    margin-right: 10px;
-  }
-  
-  .team-logo img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-  
-    
+.game {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px; 
+}
+
+.team {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+}
+
+.team-logo img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.team-name {
+  margin: 0 10px;
+  font-size: 1rem;
+}
+
+.scores {
+  display: flex;
+  flex: 2;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.team-score {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 10px;
+}

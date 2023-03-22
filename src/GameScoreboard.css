@@ -34,4 +34,19 @@
     font-size: 18px;
     font-weight: bold;
   }
+
+  .team-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Adjust this to your image's size */
+    height: 50px; /* Adjust this to your image's size */
+    margin-right: 10px;
+  }
+  
+  .team-logo img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
     

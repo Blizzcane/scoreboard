@@ -34,7 +34,7 @@ const GameCard = ({ game }) => {
           <span className="team-name">{homeTeamName}</span>
         </div>
         <div className="scores">
-          <span className="team-score">{homeTeamScore}</span>
+          <span className="team-score">{homeTeamScore}</span>-
           <span className="team-score">{awayTeamScore}</span>
         </div>
         <div className="team">

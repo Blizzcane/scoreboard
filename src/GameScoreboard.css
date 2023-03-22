@@ -1,50 +1,56 @@
 .scoreboard {
-  display: flex; 
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
-}
-
-.game {
+  background-color: #ffffff;
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  padding: 20px;
+  }
+  
+  .game {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 20px;
-  border: 2px solid black;
-  border-radius: 5px;
-  padding: 10px; 
-}
-
-.team {
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 20px;
+  }
+  
+  .team {
   display: flex;
   flex: 1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 5px;
-}
-
-.team-logo img {
-  width: 50px;
-  height: 50px;
+  margin: 10px;
+  }
+  
+  .team-logo img {
+  width: 60px;
+  height: 60px;
   object-fit: contain;
-}
-
-.team-name {
-  margin: 0 10px;
-  font-size: 1rem;
-}
-
-.scores {
+  }
+  
+  .team-name {
+  margin: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  }
+  
+  .scores {
   display: flex;
   flex: 2;
   align-items: center;
   justify-content: space-between;
-  margin: 10px 0;
-}
-
-.team-score {
-  font-size: 2rem;
+  margin: 20px 0;
+  }
+  
+  .team-score {
+  font-size: 3rem;
   font-weight: bold;
-  margin: 0 10px;
-}
+  margin: 0 20px;
+  }

@@ -84,7 +84,19 @@ export const nbaTeams = {
     secondaryColor: "#c8102e",
     thirdColor: "#ffffff",
   },
+  "LA Clippers": {
+    logo: "../images/logos/Clippers.svg",
+    primaryColor: "#1d428a",
+    secondaryColor: "#c8102e",
+    thirdColor: "#ffffff",
+  },
   "Los Angeles Lakers": {
+    logo: "../images/logos/Lakers.svg",
+    primaryColor: "#552583",
+    secondaryColor: "#fdb927",
+    thirdColor: "#ffffff",
+  },
+  "LA Lakers": {
     logo: "../images/logos/Lakers.svg",
     primaryColor: "#552583",
     secondaryColor: "#fdb927",

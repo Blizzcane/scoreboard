@@ -13,7 +13,7 @@ const GameCard = ({ game }) => {
     //     `${homeTeam.teamCity} ${homeTeam.teamName}`,
     //     `${awayTeam.teamCity} ${awayTeam.teamName}`
     //   );
-    // }
+    // } 
     const homeTeamLogo =
       nbaTeams[`${homeTeam.teamCity} ${homeTeam.teamName}`].logo;
     const awayTeamLogo =

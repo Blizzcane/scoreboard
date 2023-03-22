@@ -16,7 +16,7 @@ function GameScoreboard({ gameData }) {
   const formatDate = (dateString) => {};
 
   return (
-    <div className="scoreboard">
+      <div className="scoreboard"> 
       {games.map((game) => (
         <GameCard game={game} />
       ))}

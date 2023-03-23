@@ -23,28 +23,26 @@ const GameCard = ({ game }) => {
     const homeTeamScore = homeTeam.score;
     const awayTeamScore = awayTeam.score;
     return (
-      <div className="card d-flex flex-row justify-content-between"  >
-        <div className="d-flex flex-column justify-content-center align-content-center">
-          <span className="team-logo">
-            <img
-               className="img-fluid "
-              src={homeTeamLogo}
-              alt={`${homeTeam.teamCity} ${homeTeam.teamName} logo`}
-            />
-          </span>
+      <div className="card row d-flex flex-row text-center">
+        <div className="col-4 d-flex flex-column justify-content-center align-items-center">
+          <img
+            style={{ maxWidth: '70%' }} 
+            className=" "
+            src={homeTeamLogo}
+            alt={`${homeTeam.teamCity} ${homeTeam.teamName} logo`}
+          />
           <span className="team-name">{homeTeamName}</span>
         </div>
-        <div className="scores">
+        <div className="col-4 d-flex justify-content-center align-items-center">
           <span className="team-score">{homeTeamScore}</span>-
           <span className="team-score">{awayTeamScore}</span>
         </div>
-        <div className="d-flex flex-column justify-content-center align-content-center">
-          <span className="team-logo">
-            <img
-              src={awayTeamLogo}
-              alt={`${awayTeam.teamCity} ${awayTeam.teamName} logo`}
-            />
-          </span>
+        <div className="col-4 d-flex flex-column  justify-content-center align-items-center">
+          <img
+            style={{ maxWidth: '70%' }} 
+            src={awayTeamLogo}
+            alt={`${awayTeam.teamCity} ${awayTeam.teamName} logo`}
+          />
           <span className="team-name">{awayTeamName}</span>
         </div>
       </div>

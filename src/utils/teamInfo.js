@@ -77,7 +77,12 @@ export const nbaTeams = {
     secondaryColor: "#F0EBD2",
     tertiaryColor: "#0077C0",
   },
-
+  "Miami Heat": {
+    logo: "../images/logos/Heat.svg",
+    primaryColor: "#98002E",
+    secondaryColor: "#F9A01B",
+    tertiaryColor: "#000000",
+  },
   "Los Angeles Clippers": {
     logo: "../images/logos/Clippers.svg",
     primaryColor: "#1d428a",
@@ -107,13 +112,13 @@ export const nbaTeams = {
     primaryColor: "#1d1160",
     secondaryColor: "#e56020",
     thirdColor: "#63727a",
-  }, 
+  },
   "Sacramento Kings": {
     logo: "../images/logos/Kings.svg",
     primaryColor: "#5a2d81",
     secondaryColor: "#63727a",
     thirdColor: "#ffffff",
-  },  
+  },
   "Memphis Grizzlies": {
     logo: "../images/logos/Grizzlies.svg",
     primaryColor: "#23375b",
@@ -179,7 +184,7 @@ export const nbaTeams = {
     primaryColor: "#5a2d81",
     secondaryColor: "#63727a",
     thirdColor: "#000000",
-  }, 
+  },
   "Toronto Raptors": {
     logo: "https://cdn.nba.com/logos/nba/tor.svg",
     primaryColor: "#ce1141",

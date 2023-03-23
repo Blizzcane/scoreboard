@@ -51,9 +51,9 @@ function App() {
     : "Dribbling...";
 
   return (
-    <div className="app">
+    <div className="d-flex flex-column justify-content-center align-items-center">
       <h1 className="date">{formattedDate}</h1>
-      <GameScoreboard gameData={gameData} />
+      <GameScoreboard gameData={gameData}  />
     </div>
   );
 }

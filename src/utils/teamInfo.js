@@ -186,7 +186,7 @@ export const nbaTeams = {
     thirdColor: "#000000",
   },
   "Toronto Raptors": {
-    logo: "https://cdn.nba.com/logos/nba/tor.svg",
+    logo: "../images/logos/Raptors.svg",
     primaryColor: "#ce1141",
     secondaryColor: "#000000",
     thirdColor: "#ffffff",

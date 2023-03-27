@@ -68,7 +68,7 @@ const TestingGameCard = ({ game }) => {
           </div>
           <div
             id={`collapse${gameId}`}
-            className="accordion-collapse collapse show "
+            className="accordion-collapse collapse"
             aria-labelledby={`heading${gameId}`}
             data-bs-parent="#accordionExample"
           >
@@ -83,18 +83,28 @@ const TestingGameCard = ({ game }) => {
                   <div className="d-flex flex-row justify-content-between">
                     <div className="mx-1 d-flex flex-column">
                       <span>1</span>
+                      <span>{homeTeam.periods[0].score}</span>
+                      <span>{awayTeam.periods[0].score}</span>
                     </div>
-                    <div className="mx-1">
+                    <div className="mx-1 d-flex flex-column">
                       <span>2</span>
+                      <span>{homeTeam.periods[1].score}</span>
+                      <span>{awayTeam.periods[1].score}</span>
                     </div>
-                    <div className="mx-1">
+                    <div className="mx-1 d-flex flex-column">
                       <span>3</span>
+                      <span>{homeTeam.periods[2].score}</span>
+                      <span>{awayTeam.periods[2].score}</span>
                     </div>
-                    <div className="mx-1">
+                    <div className="mx-1 d-flex flex-column">
                       <span>4</span>
+                      <span>{homeTeam.periods[3].score}</span>
+                      <span>{awayTeam.periods[3].score}</span>
                     </div>
-                    <div className="mx-1">
+                    <div className="mx-1 d-flex flex-column">
                       <span>T</span>
+                      <span>{homeTeam.score}</span>
+                      <span>{awayTeam.score}</span>
                     </div>
                   </div>
                 </div>

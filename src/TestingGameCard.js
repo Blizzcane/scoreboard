@@ -72,7 +72,34 @@ const TestingGameCard = ({ game }) => {
             aria-labelledby={`heading${gameId}`}
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body">Game</div>
+            <div className="accordion-body d-flex flex-column">
+              <div className="d-flex flex-row justify-content-between">
+                <div className="d-flex flex-column align-items-start">
+                  <span>Team</span>
+                  <span>{homeTeamName}</span>
+                  <span>{awayTeamName}</span>
+                </div>
+                <div className="d-flex flex-column">
+                  <div className="d-flex flex-row justify-content-between">
+                    <div className="mx-1 d-flex flex-column">
+                      <span>1</span>
+                    </div>
+                    <div className="mx-1">
+                      <span>2</span>
+                    </div>
+                    <div className="mx-1">
+                      <span>3</span>
+                    </div>
+                    <div className="mx-1">
+                      <span>4</span>
+                    </div>
+                    <div className="mx-1">
+                      <span>T</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

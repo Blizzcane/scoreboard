@@ -24,7 +24,7 @@ const TestingGameCard = ({ game }) => {
     const awayTeamScore = awayTeam.score;
 
     return (
-      <div className="accordion text-center m-1">
+      <div className="accordion text-center m-1 shadow">
         <div className="accordion-item">
           <div
             className="card row d-flex flex-row accordion-header   "

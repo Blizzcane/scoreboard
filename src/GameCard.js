@@ -28,7 +28,7 @@ const GameCard = ({ game }) => {
 
 
     return (
-      <div className="card row d-flex flex-row text-center m-1 p-2 shadow">
+      <div className="card row d-flex flex-row text-center m-1 p-2 shadow" > 
         <div className="col-4 d-flex flex-column justify-content-center align-items-center">
           <img
             style={{ maxWidth: "70%" }}

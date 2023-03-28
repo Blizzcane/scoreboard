@@ -8,7 +8,7 @@ const TestingGameCard = ({ game }) => {
   const [players, setPlayers] = useState([]);
 
   useEffect(() => {
-      if (accordionShown) { 
+    if (accordionShown) {
       // fetch data here and update the players state
       fetch(`http://127.0.0.1:5000/boxscore?gameId=${game.gameId}`)
         .then((response) => response.json())
@@ -35,6 +35,8 @@ const TestingGameCard = ({ game }) => {
     const awayTeamName = `${awayTeam.teamCity} ${awayTeam.teamName}`;
     const homeTeamScore = homeTeam.score;
     const awayTeamScore = awayTeam.score;
+    const durationRegex = /PT(\d+)M/;
+
     const handleAccordionClick = () => {
       setAccordionShown(!accordionShown);
     };
@@ -103,7 +105,31 @@ const TestingGameCard = ({ game }) => {
                   </div>
                 </div>
               </div>
-                        <div className="d-flex flex-column">{players.length > 0 && players.map(player => <span>{player.name}</span>)}</div>
+              <div className="d-flex flex-column">
+                {players.length > 0 &&
+                  players.map((player) => (
+                    <div className="d-flex flex-row justify-content-between">
+                      <div className="">
+                        <span>{player.jerseyNum}</span>
+                        <span>{player.name}</span>
+                      </div>
+                      <div className=" ">
+                        <span>
+                          {
+                            player.statistics.minutesCalculated.match(
+                              durationRegex
+                            )[1]
+                          }
+                        </span>
+                        <span>{player.statistics.points}</span>
+
+                        <span>{player.statistics.reboundsTotal}</span>
+
+                        <span>{player.statistics.assists}</span>
+                      </div>
+                    </div>
+                  ))}
+              </div>
             </div>
           </div>
         </div>

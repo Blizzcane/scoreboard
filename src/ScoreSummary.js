@@ -1,7 +1,6 @@
 import React from "react";
 
-const ScoreSummary = ({ game }) => {
-  const { homeTeam, awayTeam } = game;
+const ScoreSummary = ({ game: { homeTeam, awayTeam } }) => { 
   const homeTeamName = `${homeTeam.teamCity} ${homeTeam.teamName}`;
   const awayTeamName = `${awayTeam.teamCity} ${awayTeam.teamName}`;
   const homeTeamScore = homeTeam.score;

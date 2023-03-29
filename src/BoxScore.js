@@ -6,24 +6,23 @@ const BoxScore = ({ players }) => {
   return (
     <div className="d-flex flex-column">
       {players.length > 0 &&
-        players.map((player) => (
-          <div className="d-flex flex-row justify-content-between">
+        players.map(({ jerseyNum, name, statistics }) => (
+          <div className="d-flex flex-row justify-content-between align-items-center">
             <div className="d-flex flex-row ">
-              <span className="">{player.jerseyNum}</span>
-              <span>{player.name}</span>
+              <span className="">{jerseyNum}</span>
+              <span>{name}</span>
             </div>
-            <div className=" ">
+            <div className="d-flex flex-row justify-content-end align-items-center">
               <span className="mx-2">
-                {player.statistics.minutesCalculated.match(durationRegex)[1]}
+                {statistics.minutesCalculated.match(durationRegex)[1]}
               </span>
-              <span className="mx-2">{player.statistics.points}</span>
-
-              <span className="mx-2">{player.statistics.reboundsTotal}</span>
-
-              <span className="mx-2">{player.statistics.assists}</span>
+              <span className="mx-2">{statistics.points}</span>
+              <span className="mx-2">{statistics.reboundsTotal}</span>
+              <span className="mx-2">{statistics.assists}</span>
             </div>
           </div>
         ))}
+          
     </div>
   );
 };

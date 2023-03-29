@@ -8,15 +8,16 @@ import { nbaTeams } from "./utils/teamInfo";
 const TestingGameCard = ({ game }) => {
   const [accordionShown, setAccordionShown] = useState(false);
   const [players, setPlayers] = useState([]);
+  const [team, setTeam] = useState("homeTeam");
 
   useEffect(() => {
     if (accordionShown) {
       // fetch data here and update the players state
       fetch(`http://127.0.0.1:5000/boxscore?gameId=${game.gameId}`)
         .then((response) => response.json())
-        .then((data) => setPlayers(data.game.homeTeam.players));
+        .then((data) => setPlayers(data.game[team].players));
     }
-  }, [accordionShown]);
+  }, [accordionShown, team]);
   const scoreboard = ({ homeTeam, awayTeam, gameStatusText, gameId }) => {
     // try {
     //   const homeTeamLogo =
@@ -32,10 +33,13 @@ const TestingGameCard = ({ game }) => {
     const homeTeamLogo =
       nbaTeams[`${homeTeam.teamCity} ${homeTeam.teamName}`].logo;
     const awayTeamLogo =
-      nbaTeams[`${awayTeam.teamCity} ${awayTeam.teamName}`].logo; 
+      nbaTeams[`${awayTeam.teamCity} ${awayTeam.teamName}`].logo;
 
     const handleAccordionClick = () => {
       setAccordionShown(!accordionShown);
+    };
+    const toggleTeamStats = (team) => {
+      setTeam(team);
     };
 
     return (
@@ -67,6 +71,31 @@ const TestingGameCard = ({ game }) => {
           >
             <div className="accordion-body d-flex flex-column">
               <ScoreSummary game={game} />
+              <div className="col-md-12">
+                <ul className="nav nav-tabs w-100 ">
+                  <li className="nav-item w-50 ">
+                    <a
+                      className={`nav-link ${
+                        team === "homeTeam" ? "active" : ""
+                      }`}
+                      onClick={() => toggleTeamStats("homeTeam")}
+                    >
+                      {`${homeTeam.teamCity} ${homeTeam.teamName}`}
+                    </a>
+                  </li>
+                  <li className="nav-item w-50">
+                    <a
+                      className={`nav-link ${
+                        team === "awayTeam" ? "active" : ""
+                      }`}
+                      onClick={() => toggleTeamStats("awayTeam")}
+                    >
+                      {`${awayTeam.teamCity} ${awayTeam.teamName}`}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
               <BoxScore players={players} />
             </div>
           </div>

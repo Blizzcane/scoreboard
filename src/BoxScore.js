@@ -4,25 +4,34 @@ const BoxScore = ({ players }) => {
   const durationRegex = /PT(\d+)M/;
 
   return (
-    <div className="d-flex flex-column">
-      {players.length > 0 &&
-        players.map(({ jerseyNum, name, statistics }) => (
-          <div className="d-flex flex-row justify-content-between align-items-center">
-            <div className="d-flex flex-row ">
-              <span className="">{jerseyNum}</span>
-              <span>{name}</span>
-            </div>
-            <div className="d-flex flex-row justify-content-end align-items-center">
-              <span className="mx-2">
-                {statistics.minutesCalculated.match(durationRegex)[1]}
-              </span>
-              <span className="mx-2">{statistics.points}</span>
-              <span className="mx-2">{statistics.reboundsTotal}</span>
-              <span className="mx-2">{statistics.assists}</span>
-            </div>
-          </div>
-        ))}
-          
+    <div className="table-responsive">
+      <table className="table table-sm ">
+        <thead className="thead-light">
+          <tr  >
+            <th colSpan="2" style={{ textAlign: "left" }}>
+              Player
+            </th>
+
+            <th>Pts</th>
+            <th>Reb</th>
+            <th>Ast</th>
+            <th>Min</th>
+          </tr>
+        </thead>
+        <tbody>
+          {players.length > 0 &&
+            players.map(({ jerseyNum, name, statistics }) => (
+              <tr key={jerseyNum} >
+                <td>{jerseyNum}</td>
+                <td style={{ textAlign: "left" }}>{name}</td>
+                <td>{statistics.points}</td>
+                <td>{statistics.reboundsTotal}</td>
+                <td>{statistics.assists}</td>
+                <td>{statistics.minutesCalculated.match(durationRegex)[1]}</td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
     </div>
   );
 };

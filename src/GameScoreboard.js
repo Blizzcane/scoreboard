@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react"; 
 import GameCard from "./GameCard";
-import TestingGameCard from "./TestingGameCard";
 // import "./GameScoreboard.css";
 
 function GameScoreboard({ gameData }) {
@@ -17,7 +16,7 @@ function GameScoreboard({ gameData }) {
   return (
     <div className="d-flex flex-column">
       {games.map((game) => (
-        <TestingGameCard  key={game.gameId} game={game} />
+        <GameCard  key={game.gameId} game={game} />
       ))}
     </div>
   );

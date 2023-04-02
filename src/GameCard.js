@@ -43,7 +43,7 @@ const GameCard = ({ game }) => {
       <div className="accordion text-center m-1 shadow">
         <div className="accordion-item">
           <div
-            className="card row d-flex flex-row accordion-header   "
+            className="card row d-flex flex-row accordion-header   p-2"
             id={`heading${gameId}`}
             data-bs-toggle="collapse"
             data-bs-target={`#collapse${gameId}`}

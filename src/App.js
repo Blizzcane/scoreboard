@@ -5,33 +5,40 @@ import "./App.css";
 function App() {
   const [gameData, setGameData] = useState({});
   const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(true); 
+  const [isLoading, setIsLoading] = useState(true);
   const scoreBoardUrl = process.env.REACT_APP_SCOREBOARD_URL;
 
   useEffect(() => {
     const controller = new AbortController();
     const { signal } = controller;
 
-    fetch(scoreBoardUrl+"/games", { signal })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setGameData(data.scoreboard);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        if (err.name === "AbortError") {
-          console.log("Fetch aborted");
-        } else {
-          setError(err);
-        }
-      });
+    const fetchData = () => {
+      fetch(scoreBoardUrl + "/games", { signal })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setGameData(data.scoreboard);
+          setIsLoading(false);
+        })
+        .catch((err) => {
+          if (err.name === "AbortError") {
+            console.log("Fetch aborted");
+          } else {
+            setError(err);
+          }
+        });
+    };
+
+    fetchData(); // initial fetch
+
+    const intervalId = setInterval(fetchData, 60000); // fetch every minute
 
     return () => {
+      clearInterval(intervalId);
       controller.abort();
     };
   }, []);

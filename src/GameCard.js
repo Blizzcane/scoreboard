@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react"; 
+import React, { useEffect, useState } from "react";
 import ScoreboardHeader from "./ScoreBoardHeaders";
-import ScoreDisplay from "./ScoreDisplay"; 
-import GameDetails from "./GameDetails"; 
+import ScoreDisplay from "./ScoreDisplay";
+import GameDetails from "./GameDetails";
 import { nbaTeams } from "./utils/teamInfo";
+import "./GameCard.css";
 
 const GameCard = ({ game }) => {
   const [accordionShown, setAccordionShown] = useState(false);
@@ -17,33 +18,26 @@ const GameCard = ({ game }) => {
         .then((data) => setPlayers(data.game[team].players));
     }
   }, [accordionShown, team]);
+
   const scoreboard = ({ homeTeam, awayTeam, gameStatusText, gameId }) => {
-    // try {
-    //   const homeTeamLogo =
-    //     nbaTeams[`${homeTeam.teamCity} ${homeTeam.teamName}`].logo;
-    //   const awayTeamLogo =
-    //     nbaTeams[`${awayTeam.teamCity} ${awayTeam.teamName}`].logo;
-    // } catch (error) {
-    //   console.log(
-    //     `${homeTeam.teamCity} ${homeTeam.teamName}`,
-    //     `${awayTeam.teamCity} ${awayTeam.teamName}`
-    //   );
-    // }
-    const homeTeamLogo = nbaTeams[`${homeTeam.teamCity} ${homeTeam.teamName}`]?.logo ?? '';
-    const awayTeamLogo = nbaTeams[`${awayTeam.teamCity} ${awayTeam.teamName}`]?.logo ?? '';
-  
+    const homeTeamLogo =
+      nbaTeams[`${homeTeam.teamCity} ${homeTeam.teamName}`]?.logo ?? "";
+    const awayTeamLogo =
+      nbaTeams[`${awayTeam.teamCity} ${awayTeam.teamName}`]?.logo ?? "";
+
     const handleAccordionClick = () => {
       setAccordionShown(!accordionShown);
     };
     const toggleTeamStats = (team) => {
       setTeam(team);
     };
+    const isLive = gameStatusText.includes("Final");
 
     return (
       <div className="accordion text-center m-1 shadow">
         <div className="accordion-item">
           <div
-            className="card row d-flex flex-row accordion-header   p-2"
+            className="card row d-flex flex-row accordion-header p-2"
             id={`heading${gameId}`}
             data-bs-toggle="collapse"
             data-bs-target={`#collapse${gameId}`}
@@ -51,6 +45,17 @@ const GameCard = ({ game }) => {
             aria-controls={`collapse${gameId}`}
             onClick={handleAccordionClick}
           >
+            <div className="d-inline-block">
+              {!isLive && (
+                <div className="d-inline-flex align-items-center">
+                  <span className="badge bg-success me-2 d-flex align-items-center">
+                    <span className="dot" />
+                    LIVE
+                  </span>
+                </div>
+              )}
+            </div>
+
             <ScoreboardHeader team={homeTeam} logo={homeTeamLogo} />
 
             <ScoreDisplay

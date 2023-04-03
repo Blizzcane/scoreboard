@@ -11,3 +11,7 @@
 body {
   font-family: "Open Sans", sans-serif; 
 }
+
+.date-title {
+  font-weight: 700;
+}

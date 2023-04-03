@@ -59,7 +59,7 @@ function App() {
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center">
-      <h1 className="date">{formattedDate}</h1>
+      <h2 className="date date-title">{formattedDate}</h2>
       <GameScoreboard gameData={gameData} />
     </div>
   );

@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import ScoreboardHeader from "./ScoreBoardHeaders";
 import ScoreDisplay from "./ScoreDisplay";
 import GameDetails from "./GameDetails";
-import { nbaTeams } from "./utils/teamInfo";
-import "./GameCard.css";
+import { nbaTeams } from "./utils/teamInfo";  
 
 const GameCard = ({ game }) => {
   const [accordionShown, setAccordionShown] = useState(false);
@@ -45,23 +44,14 @@ const GameCard = ({ game }) => {
             aria-controls={`collapse${gameId}`}
             onClick={handleAccordionClick}
           >
-            <div className="d-inline-block">
-              {!isLive && (
-                <div className="d-inline-flex align-items-center">
-                  <span className="badge bg-success me-2 d-flex align-items-center">
-                    <span className="dot" />
-                    LIVE
-                  </span>
-                </div>
-              )}
-            </div>
-
+            
             <ScoreboardHeader team={homeTeam} logo={homeTeamLogo} />
 
             <ScoreDisplay
               homeTeamScore={homeTeam.score}
               awayTeamScore={awayTeam.score}
               gameStatusText={gameStatusText}
+              isLive={isLive}
             />
             <ScoreboardHeader team={awayTeam} logo={awayTeamLogo} />
           </div>

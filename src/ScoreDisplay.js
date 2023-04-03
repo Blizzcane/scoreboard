@@ -1,7 +1,8 @@
 import React from "react";
+import LiveBadge from "./LiveBadge";
 import { nbaTeams } from "./utils/teamInfo";
 
-const ScoreDisplay = ({ homeTeamScore, awayTeamScore, gameStatusText }) => {
+const ScoreDisplay = ({ homeTeamScore, awayTeamScore, gameStatusText,isLive }) => {
  
   return (
     <div className="col-4 d-flex justify-content-center  flex-column"> 
@@ -15,6 +16,7 @@ const ScoreDisplay = ({ homeTeamScore, awayTeamScore, gameStatusText }) => {
         </span>
       </div>
       <span className="">{`${gameStatusText}`}</span>
+      <LiveBadge isLive={isLive} />
     </div>
   );
 };

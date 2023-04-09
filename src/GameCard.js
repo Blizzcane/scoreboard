@@ -4,7 +4,7 @@ import ScoreDisplay from "./ScoreDisplay";
 import GameDetails from "./GameDetails";
 import { nbaTeams } from "./utils/teamInfo";  
 
-const GameCard = ({ game }) => {
+const GameCard = ({ game,scoreBoardUrl }) => {
   const [accordionShown, setAccordionShown] = useState(false);
   const [players, setPlayers] = useState([]);
   const [team, setTeam] = useState("homeTeam");
@@ -12,7 +12,7 @@ const GameCard = ({ game }) => {
   useEffect(() => {
     if (accordionShown) {
       // fetch data here and update the players state
-      fetch(`http://127.0.0.1:5000/boxscore?gameId=${game.gameId}`)
+      fetch(`${scoreBoardUrl}/boxscore?gameId=${game.gameId}`)
         .then((response) => response.json())
         .then((data) => setPlayers(data.game[team].players));
     }
@@ -30,7 +30,7 @@ const GameCard = ({ game }) => {
     const toggleTeamStats = (team) => {
       setTeam(team);
     };
-    const isLive = gameStatusText.includes("Q") || gameStatusText.includes("half");
+    const isLive = gameStatusText.includes("Q") || gameStatusText.includes("Half");
 
     return (
       <div className="accordion text-center m-1 shadow">

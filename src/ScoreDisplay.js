@@ -10,9 +10,9 @@ const ScoreDisplay = ({
   isLive,
 }) => {
   return (
-    <div className="col-4 d-flex justify-content-center flex-column">
-      <Score homeTeamScore={homeTeamScore} awayTeamScore={awayTeamScore} />
+    <div className="col-4 d-flex justify-content-evenly flex-column">
       <LiveBadge isLive={isLive} />
+      <Score homeTeamScore={homeTeamScore} awayTeamScore={awayTeamScore} />
       <span className="">{`${gameStatusText}`}</span>
     </div>
   );

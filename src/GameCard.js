@@ -30,7 +30,7 @@ const GameCard = ({ game }) => {
     const toggleTeamStats = (team) => {
       setTeam(team);
     };
-    const isLive = gameStatusText.includes("Final");
+    const isLive = gameStatusText.includes("Q") || gameStatusText.includes("half");
 
     return (
       <div className="accordion text-center m-1 shadow">

@@ -4,7 +4,7 @@ import "./LiveBadge.css"
 const LiveBadge = ({ isLive }) => {
   return (
     <div className="d-inline-block">
-      {!isLive && (
+      {isLive && (
         <div className="d-inline-flex align-items-center">
           <span className="badge bg-success d-flex align-items-center">
             <span className="dot" />

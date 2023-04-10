@@ -12,7 +12,7 @@ const Score = ({ homeTeamScore, awayTeamScore, gameOver }) => {
             gameOver && winnerIsHome ? "text-success " : "fw-lighter"
           }`}
         >
-          {homeTeamScore}{" "}
+          {homeTeamScore}
         </h2>
       </span>
       <h2>-</h2>

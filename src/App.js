@@ -9,6 +9,20 @@ function App() {
   const scoreBoardUrl = process.env.REACT_APP_SCOREBOARD_URL;
 
   useEffect(() => {
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("./serviceWorker.js")
+          .then((reg) => {
+            console.log("Worker Registered");
+          })
+          .catch((err) => {
+            console.log("Error in service worker", err);
+          });
+      });
+    }
+  }, []);
+  useEffect(() => {
     const controller = new AbortController();
     const { signal } = controller;
 

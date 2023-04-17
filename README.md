@@ -10,8 +10,8 @@ This is a progressive web app built with ReactJS that displays live NBA scoreboa
 
 ## Screenshots
  
-![Scoreboard](./src/utils/screenshots/Home.jpg) 
-![Detailed Info](./src/utils/screenshots/Details.jpg) 
+![Scoreboard](./src/utils/screenshots/Home.png) 
+![Detailed Info](./src/utils/screenshots/Details.png) 
 
 ## Installation
 

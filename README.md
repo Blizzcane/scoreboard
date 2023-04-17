@@ -9,10 +9,9 @@ This is a progressive web app built with ReactJS that displays live NBA scoreboa
 - Unique user interface with Bootstrap accordion cards
 
 ## Screenshots
-
-![Screenshot 1](/path/to/screenshot1.png)
-![Screenshot 2](/path/to/screenshot2.png)
-![Screenshot 3](/path/to/screenshot3.png)
+ 
+![Scoreboard](./src/utils/screenshots/Home.jpg) 
+![Detailed Info](./src/utils/screenshots/Details.jpg) 
 
 ## Installation
 

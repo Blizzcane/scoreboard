@@ -12,7 +12,7 @@ const ScoreDisplay = ({
   const [userGameStatusText, setUserGameStatusText] = useState(gameStatusText);
 
   useEffect(() => {
-    if (gameStatusText !== "Final" && !gameStatusText.includes("Half")) {
+    if (gameStatusText !== "Final" && !gameStatusText.includes("Half") && !gameStatusText.includes("Q")) {
       const timezoneOffset = new Date().getTimezoneOffset();
 
       // Parse the input date string using moment.js and set the timezone to "America/New_York" for ET

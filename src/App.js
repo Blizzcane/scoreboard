@@ -8,6 +8,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const scoreBoardUrl = process.env.REACT_APP_SCOREBOARD_URL;
 
+  
   useEffect(() => {
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {

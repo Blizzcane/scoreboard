@@ -1,7 +1,7 @@
 import React from "react";
-import ScoreSummary from "./ScoreSummary";
+import ScoreSummary from "../features/ScoreSummary/ScoreSummary";
 import TeamTabs from "../components/TeamTabs";
-import BoxScore from "./BoxScore";
+import BoxScore from "../features/BoxScore/BoxScore";
 
 const GameDetails = ({ gameId, game, team, homeTeam, awayTeam, players, toggleTeamStats }) => {
   return (

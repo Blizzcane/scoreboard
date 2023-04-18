@@ -1,6 +1,6 @@
 # NBA Live Scoreboards
 
-This is a progressive web app built with ReactJS that displays live NBA scoreboards as Bootstrap accordion cards. Each card shows basic details about the game, such as the teams playing, the current score, and the time remaining in the game. Tapping a card will reveal more detailed information about the game, such as the scoring summary and player statistics. The data is from a python backend [server](https://github.com/Blizzcane/sports-server) built with Flask. Visit the app [here](https://scoreboard-omega.vercel.app/).
+This is a progressive web app built with ReactJS that displays live NBA scoreboards as Bootstrap accordion cards. Each card shows basic details about the game, such as the teams playing, the current score, and the time remaining in the game. Tapping a card will reveal more detailed information about the game, such as the scoring summary and player statistics. The data is from a python backend [server](https://github.com/Blizzcane/sports-server) built with Flask. Visit the app [here](https://scoreboard-omega.vercel.app/). Since this is using a free tier, please note that the first load after 15 minutes of inactivity may take a bit longer to spin up.
 
 ## Features
 

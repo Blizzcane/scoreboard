@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ScoreboardHeader from "./ScoreBoardHeaders";
-import ScoreDisplay from "../ScoreDisplay";
-import GameDetails from "../features/GameDetails";
+import ScoreDisplay from "./ScoreDisplay";
+import GameDetails from "../layouts/GameDetails";
 import { nbaTeams } from "../utils/teamInfo";  
 
 const GameCard = ({ game,scoreBoardUrl }) => {

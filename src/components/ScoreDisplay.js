@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment-timezone";
-import LiveBadge from "./components/LiveBadge";
-import Score from "./components/Score";
+import LiveBadge from "./LiveBadge";
+import Score from "./Score";
 
 const ScoreDisplay = ({
   homeTeamScore,

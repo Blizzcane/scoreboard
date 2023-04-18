@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ScoreboardHeader from "./ScoreBoardHeaders";
-import ScoreDisplay from "./ScoreDisplay";
-import GameDetails from "./GameDetails";
-import { nbaTeams } from "./utils/teamInfo";  
+import ScoreDisplay from "../ScoreDisplay";
+import GameDetails from "../features/GameDetails";
+import { nbaTeams } from "../utils/teamInfo";  
 
 const GameCard = ({ game,scoreBoardUrl }) => {
   const [accordionShown, setAccordionShown] = useState(false);

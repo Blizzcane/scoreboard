@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"; 
-import GameCard from "./GameCard";
+import GameCard from "../components/GameCard";
 // import "./GameScoreboard.css";
 
 function GameScoreboard({ gameData,scoreBoardUrl }) {

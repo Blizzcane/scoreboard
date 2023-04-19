@@ -7,7 +7,7 @@ const GameDetails = ({ gameId, game, team, homeTeam, awayTeam, players, toggleTe
   return (
     <div
       id={`collapse${gameId}`}
-      className="accordion-collapse collapse"
+      className="accordion-collapse collapse "
       aria-labelledby={`heading${gameId}`}
       data-bs-parent="#accordionExample"
     >

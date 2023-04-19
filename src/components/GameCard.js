@@ -38,6 +38,7 @@ const GameCard = ({ game,scoreBoardUrl }) => {
           <div
             className="card row d-flex flex-row accordion-header p-2 m-auto"
             id={`heading${gameId}`}
+            
             data-bs-toggle="collapse"
             data-bs-target={`#collapse${gameId}`}
             aria-expanded="true"

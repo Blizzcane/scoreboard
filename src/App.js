@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import GameScoreboard from "./layouts/GameScoreboard";
+import Loading from "./layouts/Loading";
 import "./App.css";
 
 
@@ -70,7 +71,7 @@ function App() {
       month: "long",
       day: "numeric",
     })
-    : (<div><p>"Dribbling..."</p> <spline-viewer url="https://prod.spline.design/eHUK6JmPy79D67Rc/scene.splinecode"></spline-viewer></div>);
+    : <Loading />;
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center">

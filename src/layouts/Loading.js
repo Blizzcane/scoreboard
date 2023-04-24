@@ -1,7 +1,7 @@
 import React from "react";
 import "./Loading.css"
 
-
+// displays a spline3D model of a basketball
 const Loading = () => {
     return (
         <div class="container">

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import GameScoreboard from "./layouts/GameScoreboard";
-import "./App.css"; 
+import "./App.css";
+
 
 function App() {
   const [gameData, setGameData] = useState({});
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const scoreBoardUrl = process.env.REACT_APP_SCOREBOARD_URL;
-   
+
   useEffect(() => {
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
@@ -65,15 +66,15 @@ function App() {
 
   const formattedDate = date
     ? date.toLocaleDateString("en-US", {
-        weekday: "long",
-        month: "long",
-        day: "numeric",
-      })
-    : "Dribbling...";
+      weekday: "long",
+      month: "long",
+      day: "numeric",
+    })
+    : (<div><p>"Dribbling..."</p> <spline-viewer url="https://prod.spline.design/eHUK6JmPy79D67Rc/scene.splinecode"></spline-viewer></div>);
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center">
-      <h2 className="date date-title my-2">{formattedDate}</h2> 
+      <h2 className="date date-title my-2">{formattedDate}</h2>
       <GameScoreboard gameData={gameData} scoreBoardUrl={scoreBoardUrl} />
     </div>
   );

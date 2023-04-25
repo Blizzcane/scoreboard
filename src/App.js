@@ -71,14 +71,13 @@ function App() {
       month: "long",
       day: "numeric",
     })
-    : <Loading />;
-return <Loading/>
-  // return (
-  //   <div className="d-flex flex-column justify-content-center align-items-center">
-  //     <h2 className="date date-title my-2">{formattedDate}</h2>
-  //     <GameScoreboard gameData={gameData} scoreBoardUrl={scoreBoardUrl} />
-  //   </div>
-  // );
+    : <Loading />; 
+  return (
+    <div className="d-flex flex-column justify-content-center align-items-center">
+      <h2 className="date date-title my-2">{formattedDate}</h2>
+      <GameScoreboard gameData={gameData} scoreBoardUrl={scoreBoardUrl} />
+    </div>
+  );
 }
 
 export default App;

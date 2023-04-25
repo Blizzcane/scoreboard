@@ -63,7 +63,7 @@ function App() {
     return <div>Error: {error.message}</div>;
   }
 
-  const date = gameData.gameDate ? new Date(gameData.gameDate) : null;
+  const date = gameData.gameDate ? new Date(gameData.gameDate + "T00:00:00-05:00") : null;
 
   const formattedDate = date
     ? date.toLocaleDateString("en-US", {

@@ -9,7 +9,7 @@ const Loading = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const app = new Application(canvas);
-    app.load('https://prod.spline.design/eHUK6JmPy79D67Rc/scene.splinecode');
+    app.load('https://prod.spline.design/AU91FKhexZsGBzae/scene.splinecode');
   }, []);
 
   return (

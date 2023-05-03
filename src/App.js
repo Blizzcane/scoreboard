@@ -73,10 +73,11 @@ function App() {
     })
     : <Loading />; 
   return (
-    <div className="d-flex flex-column justify-content-center align-items-center">
-      <h2 className="date date-title my-2">{formattedDate}</h2>
-      <GameScoreboard gameData={gameData} scoreBoardUrl={scoreBoardUrl} />
-    </div>
+    // <div className="d-flex flex-column justify-content-center align-items-center">
+    //   <h2 className="date date-title my-2">{formattedDate}</h2>
+    //   <GameScoreboard gameData={gameData} scoreBoardUrl={scoreBoardUrl} />
+    // </div> 
+    <Loading/>
   );
 }
 

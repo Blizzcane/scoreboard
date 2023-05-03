@@ -15,7 +15,7 @@ const Loading = () => {
   return (
     <div className="container">
       <div className="text-overlay">Dribbling...</div>
-      <canvas ref={canvasRef} className="canvas3d"></canvas>
+      <canvas ref={canvasRef} className="canvas3d" ></canvas>
     </div>
   );
 };

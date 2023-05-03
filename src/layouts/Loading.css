@@ -22,4 +22,20 @@
   color: rgb(0, 0, 0);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   z-index: 1;
+  animation: dribbling-animation 1s infinite;
+}
+
+@keyframes dribbling-animation {
+  0% {
+    content: "Dribbling";
+  }
+  33% {
+    content: "Dribbling.";
+  }
+  66% {
+    content: "Dribbling..";
+  }
+  100% {
+    content: "Dribbling...";
+  }
 }

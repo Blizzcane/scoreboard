@@ -3,6 +3,8 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  padding: 0;
+  margin: auto;
 }
 
 .canvas3d {  
